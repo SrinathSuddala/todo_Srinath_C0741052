@@ -3,6 +3,7 @@
     <entity name="Category" representedClassName="Category" syncable="YES" codeGenerationType="class">
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="uuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="tasks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Task" inverseName="category" inverseEntity="Task"/>
     </entity>
     <entity name="Task" representedClassName="Task" syncable="YES" codeGenerationType="class">
         <attribute name="dateCreated" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -11,9 +12,10 @@
         <attribute name="isExpired" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="numberOfDays" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="tasks" inverseEntity="Category"/>
     </entity>
     <elements>
-        <element name="Category" positionX="-63" positionY="-18" width="128" height="73"/>
-        <element name="Task" positionX="-54" positionY="9" width="128" height="133"/>
+        <element name="Category" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="Task" positionX="-54" positionY="9" width="128" height="148"/>
     </elements>
 </model>
