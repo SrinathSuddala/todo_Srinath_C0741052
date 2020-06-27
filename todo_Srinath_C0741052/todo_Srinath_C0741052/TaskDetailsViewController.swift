@@ -20,7 +20,23 @@ class TaskDetailsViewController: UIViewController {
         taskDescriptionTextView.layer.borderWidth = 1.0
         taskDescriptionTextView.layer.cornerRadius = 5.0
         
+        selectCategoryButton.layer.borderColor = UIColor.black.cgColor
+        selectCategoryButton.layer.borderWidth = 1.0
+        selectCategoryButton.layer.cornerRadius = 5.0
+        
+        showSelectedTaskDetails()
         // Do any additional setup after loading the view.
+    }
+    
+    func showSelectedTaskDetails() {
+        guard let task = selectedTask else { return }
+        taskTitleTextField.text = task.title
+        taskDescriptionTextView.text = task.desc
+        if let category = task.category {
+            selectCategoryButton.setTitle(category.title, for: UIControl.State())
+        } else {
+            selectCategoryButton.setTitle("Select Category", for: UIControl.State())
+        }
     }
     
     @objc func saveTapped() {
