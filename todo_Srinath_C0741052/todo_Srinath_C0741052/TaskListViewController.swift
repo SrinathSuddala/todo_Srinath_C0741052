@@ -66,7 +66,25 @@ extension TaskListViewController: UITableViewDataSource {
         cell.textLabel?.text = tasks[indexPath.row].title
         return cell
     }
-    
-    
 }
 
+extension TaskListViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.tasks = fetchNotes(with: searchText)
+        taskListTableView.reloadData()
+    }
+    
+    func fetchNotes(with text: String) -> [Task] {
+        if text.isEmpty {
+            guard let tasks = try? appdelegate.persistentContainer.viewContext.fetch(Task.fetchRequest(with: selectedCategory.uuid!) as NSFetchRequest<Task>) else {
+                return []
+            }
+            return tasks
+        } else {
+            guard let tasks = try? appdelegate.persistentContainer.viewContext.fetch(Task.fetchRequest(with: text, categoryUuid: selectedCategory.uuid!) as NSFetchRequest<Task>) else {
+                return []
+            }
+            return tasks
+        }
+    }
+}

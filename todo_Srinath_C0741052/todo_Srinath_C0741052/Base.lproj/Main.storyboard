@@ -101,20 +101,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oja-8k-66b">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="718"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Rc6-6x-Lss" id="PM6-ZQ-ny2"/>
                                     <outlet property="delegate" destination="Rc6-6x-Lss" id="YBV-Ey-a1a"/>
                                 </connections>
                             </tableView>
+                            <searchBar contentMode="redraw" placeholder="Saerch Task" translatesAutoresizingMaskIntoConstraints="NO" id="ecm-pl-cdr">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Rc6-6x-Lss" id="9Gf-hM-TUy"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="ecm-pl-cdr" firstAttribute="leading" secondItem="v44-ha-HFB" secondAttribute="leading" id="6iB-26-aMg"/>
                             <constraint firstItem="v44-ha-HFB" firstAttribute="bottom" secondItem="oja-8k-66b" secondAttribute="bottom" id="8Zn-LY-cg0"/>
+                            <constraint firstItem="ecm-pl-cdr" firstAttribute="top" secondItem="v44-ha-HFB" secondAttribute="top" id="R9f-Py-Teo"/>
+                            <constraint firstAttribute="trailing" secondItem="ecm-pl-cdr" secondAttribute="trailing" id="cuk-41-fWT"/>
+                            <constraint firstItem="oja-8k-66b" firstAttribute="top" secondItem="ecm-pl-cdr" secondAttribute="bottom" id="e6s-UU-mrO"/>
                             <constraint firstItem="v44-ha-HFB" firstAttribute="trailing" secondItem="oja-8k-66b" secondAttribute="trailing" id="lOH-yS-xi0"/>
                             <constraint firstItem="oja-8k-66b" firstAttribute="leading" secondItem="v44-ha-HFB" secondAttribute="leading" id="n6h-re-K7g"/>
-                            <constraint firstItem="oja-8k-66b" firstAttribute="top" secondItem="v44-ha-HFB" secondAttribute="top" id="oRo-o4-Y5g"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="v44-ha-HFB"/>
                     </view>
@@ -125,7 +135,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5EO-Ql-J1n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1711" y="-198"/>
+            <point key="canvasLocation" x="1710.144927536232" y="-198.21428571428569"/>
         </scene>
         <!--Task Details View Controller-->
         <scene sceneID="HeX-r4-zwS">
