@@ -1,5 +1,6 @@
 
 import UIKit
+import CoreData
 
 class CategoryDetailViewController: UIViewController {
     

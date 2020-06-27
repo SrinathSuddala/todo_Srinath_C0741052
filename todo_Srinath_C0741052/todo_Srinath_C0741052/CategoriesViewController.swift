@@ -1,10 +1,12 @@
 
 import UIKit
+import CoreData
 
 class CategoriesViewController: UIViewController {
     
     @IBOutlet weak var categoryTable: UITableView!
     var categories: [Category] = []
+    let appdelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
