@@ -19,7 +19,9 @@ class CategoriesViewController: UIViewController {
     }
     
     @objc func addTapped() {
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "CategoryDetailViewController") as! CategoryDetailViewController
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
 
