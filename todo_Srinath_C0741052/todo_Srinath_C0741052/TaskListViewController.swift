@@ -6,20 +6,23 @@ class TaskListViewController: UIViewController {
     
     @IBOutlet weak var taskListTableView: UITableView!
     var tasks: [Task] = []
+    var selectedCategory: Category!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = "Tasks"
         taskListTableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
         
-        // Do any additional setup after loading the view.
+        // Do a ny additional setup after loading the view.
     }
     
 
     @objc func addTapped() {
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "TaskDetailsViewController") as! TaskDetailsViewController
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     /*

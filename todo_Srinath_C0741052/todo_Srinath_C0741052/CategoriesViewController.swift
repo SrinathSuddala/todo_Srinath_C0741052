@@ -59,3 +59,12 @@ extension CategoriesViewController: UITableViewDataSource {
         return cell
     }
 }
+
+extension CategoriesViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "TaskListViewController") as! TaskListViewController
+        viewController.selectedCategory = categories[indexPath.row]
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+}

@@ -130,14 +130,57 @@
         <!--Task Details View Controller-->
         <scene sceneID="HeX-r4-zwS">
             <objects>
-                <viewController id="5Y7-hf-DAe" customClass="TaskDetailsViewController" customModule="todo_Srinath_C0741052" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TaskDetailsViewController" id="5Y7-hf-DAe" customClass="TaskDetailsViewController" customModule="todo_Srinath_C0741052" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ec4-iE-SiO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Task Goal" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UnN-t3-ei7">
+                                <rect key="frame" x="20" y="80" width="374" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="gqX-9h-GXn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vde-jh-vah">
+                                <rect key="frame" x="20" y="145" width="374" height="150"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="gbG-qf-7nK"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAr-UI-wWN">
+                                <rect key="frame" x="20" y="20" width="374" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="V0F-Or-ciQ"/>
+                                </constraints>
+                                <state key="normal" title="Select Category"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="vde-jh-vah" firstAttribute="top" secondItem="UnN-t3-ei7" secondAttribute="bottom" constant="20" id="2aS-ty-3Ca"/>
+                            <constraint firstItem="RWt-s0-5qo" firstAttribute="trailing" secondItem="UnN-t3-ei7" secondAttribute="trailing" constant="20" id="AUD-YW-RXH"/>
+                            <constraint firstItem="vde-jh-vah" firstAttribute="leading" secondItem="RWt-s0-5qo" secondAttribute="leading" constant="20" id="CsD-xa-wzA"/>
+                            <constraint firstItem="RWt-s0-5qo" firstAttribute="trailing" secondItem="YAr-UI-wWN" secondAttribute="trailing" constant="20" id="NyZ-pZ-mdS"/>
+                            <constraint firstItem="YAr-UI-wWN" firstAttribute="leading" secondItem="RWt-s0-5qo" secondAttribute="leading" constant="20" id="cdk-cZ-2Bs"/>
+                            <constraint firstItem="RWt-s0-5qo" firstAttribute="trailing" secondItem="vde-jh-vah" secondAttribute="trailing" constant="20" id="fFM-rV-L1z"/>
+                            <constraint firstItem="UnN-t3-ei7" firstAttribute="leading" secondItem="RWt-s0-5qo" secondAttribute="leading" constant="20" id="jV6-xl-TlB"/>
+                            <constraint firstItem="YAr-UI-wWN" firstAttribute="top" secondItem="RWt-s0-5qo" secondAttribute="top" constant="20" id="pkY-sA-d4I"/>
+                            <constraint firstItem="UnN-t3-ei7" firstAttribute="top" secondItem="YAr-UI-wWN" secondAttribute="bottom" constant="20" id="tjK-L2-LIY"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="RWt-s0-5qo"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="selectCategoryButton" destination="YAr-UI-wWN" id="IfA-WR-uKM"/>
+                        <outlet property="taskDescriptionTextView" destination="vde-jh-vah" id="IkY-ww-aRO"/>
+                        <outlet property="taskTitleTextField" destination="UnN-t3-ei7" id="QB8-AT-tyc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="li3-ef-1Nz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
