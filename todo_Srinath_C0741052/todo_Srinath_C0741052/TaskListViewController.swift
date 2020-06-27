@@ -70,12 +70,21 @@ extension TaskListViewController: UITableViewDelegate {
             
         }
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, view, handler) in
-            
+            self.deleteTask(at: indexPath)
         }
         deleteAction.backgroundColor = .red
         let configuration = UISwipeActionsConfiguration(actions: [deleteAction, editAction])
         configuration.performsFirstActionWithFullSwipe = false
         return configuration
+    }
+    
+    func deleteTask(at indexPath: IndexPath) {
+        taskListTableView.beginUpdates()
+        let task = tasks[indexPath.row]
+        tasks.remove(at: indexPath.row)
+        taskListTableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.fade)
+        appdelegate.persistentContainer.viewContext.delete(task)
+        taskListTableView.endUpdates()
     }
 }
 
