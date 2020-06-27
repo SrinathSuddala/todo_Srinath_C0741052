@@ -58,10 +58,28 @@
                     <view key="view" contentMode="scaleToFill" id="Z9X-r8-6Nm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GRh-H3-saN">
+                                <rect key="frame" x="20" y="30" width="374" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="K8l-Yv-4Z5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="GRh-H3-saN" firstAttribute="top" secondItem="il1-Rt-nDN" secondAttribute="top" constant="30" id="RMM-th-AMF"/>
+                            <constraint firstItem="il1-Rt-nDN" firstAttribute="trailing" secondItem="GRh-H3-saN" secondAttribute="trailing" constant="20" id="puV-i4-9Pc"/>
+                            <constraint firstItem="GRh-H3-saN" firstAttribute="leading" secondItem="il1-Rt-nDN" secondAttribute="leading" constant="20" id="uPc-z9-iTi"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="il1-Rt-nDN"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="titleTextField" destination="GRh-H3-saN" id="uIp-hw-v7d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vrt-Ox-vWY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
