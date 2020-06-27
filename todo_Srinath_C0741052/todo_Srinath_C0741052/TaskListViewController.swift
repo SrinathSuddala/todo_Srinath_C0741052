@@ -53,7 +53,13 @@ class TaskListViewController: UIViewController {
 }
 
 extension TaskListViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "TaskDetailsViewController") as! TaskDetailsViewController
+        viewController.selectedCategory = selectedCategory
+        viewController.selectedTask = tasks[indexPath.row]
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
 }
 
 extension TaskListViewController: UITableViewDataSource {
