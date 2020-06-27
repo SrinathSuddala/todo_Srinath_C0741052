@@ -18,6 +18,19 @@ class CategoriesViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        categories = fetchCategories()
+        categoryTable.reloadData()
+    }
+    
+    func fetchCategories() -> [Category] {
+        guard let categories = try? appdelegate.persistentContainer.viewContext.fetch(Category.fetchRequest() as NSFetchRequest<Category>) else {
+            return []
+        }
+        return categories
+    }
+    
     @objc func addTapped() {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let viewController = storyboard.instantiateViewController(withIdentifier: "CategoryDetailViewController") as! CategoryDetailViewController
