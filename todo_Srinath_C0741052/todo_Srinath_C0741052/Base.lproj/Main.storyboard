@@ -51,5 +51,21 @@
             </objects>
             <point key="canvasLocation" x="294" y="-212"/>
         </scene>
+        <!--Category Detail View Controller-->
+        <scene sceneID="Znx-Tn-hv2">
+            <objects>
+                <viewController storyboardIdentifier="CategoryDetailViewController" id="hcI-HL-hQK" customClass="CategoryDetailViewController" customModule="todo_Srinath_C0741052" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z9X-r8-6Nm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="il1-Rt-nDN"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vrt-Ox-vWY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="987" y="-197"/>
+        </scene>
     </scenes>
 </document>
