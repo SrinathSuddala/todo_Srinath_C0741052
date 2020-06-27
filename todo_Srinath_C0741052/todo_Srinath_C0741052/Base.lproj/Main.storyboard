@@ -127,5 +127,21 @@
             </objects>
             <point key="canvasLocation" x="1711" y="-198"/>
         </scene>
+        <!--Task Details View Controller-->
+        <scene sceneID="HeX-r4-zwS">
+            <objects>
+                <viewController id="5Y7-hf-DAe" customClass="TaskDetailsViewController" customModule="todo_Srinath_C0741052" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ec4-iE-SiO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="RWt-s0-5qo"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="li3-ef-1Nz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2449" y="-198"/>
+        </scene>
     </scenes>
 </document>

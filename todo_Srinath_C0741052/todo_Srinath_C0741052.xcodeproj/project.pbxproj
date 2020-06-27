@@ -13,6 +13,7 @@
 		AC078CB624A7343400949E1C /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC078CB424A7343400949E1C /* Task+CoreDataProperties.swift */; };
 		AC078CB824A7361F00949E1C /* CategoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC078CB724A7361F00949E1C /* CategoryDetailViewController.swift */; };
 		AC078CBA24A7391700949E1C /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC078CB924A7391700949E1C /* TaskListViewController.swift */; };
+		AC078CBC24A7778A00949E1C /* TaskDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC078CBB24A7778A00949E1C /* TaskDetailsViewController.swift */; };
 		AC63F32524A5BFCD00B318DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC63F32424A5BFCD00B318DB /* AppDelegate.swift */; };
 		AC63F32724A5BFCD00B318DB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC63F32624A5BFCD00B318DB /* SceneDelegate.swift */; };
 		AC63F32924A5BFCD00B318DB /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC63F32824A5BFCD00B318DB /* CategoriesViewController.swift */; };
@@ -29,6 +30,7 @@
 		AC078CB424A7343400949E1C /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		AC078CB724A7361F00949E1C /* CategoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailViewController.swift; sourceTree = "<group>"; };
 		AC078CB924A7391700949E1C /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
+		AC078CBB24A7778A00949E1C /* TaskDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailsViewController.swift; sourceTree = "<group>"; };
 		AC63F32124A5BFCD00B318DB /* todo_Srinath_C0741052.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = todo_Srinath_C0741052.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC63F32424A5BFCD00B318DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC63F32624A5BFCD00B318DB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				AC63F32824A5BFCD00B318DB /* CategoriesViewController.swift */,
 				AC078CB724A7361F00949E1C /* CategoryDetailViewController.swift */,
 				AC078CB924A7391700949E1C /* TaskListViewController.swift */,
+				AC078CBB24A7778A00949E1C /* TaskDetailsViewController.swift */,
 				AC63F32A24A5BFCD00B318DB /* Main.storyboard */,
 				AC63F33024A5BFD500B318DB /* Assets.xcassets */,
 				AC63F33224A5BFD500B318DB /* LaunchScreen.storyboard */,
@@ -166,6 +169,7 @@
 				AC63F32F24A5BFCD00B318DB /* todo_Srinath_C0741052.xcdatamodeld in Sources */,
 				AC63F32524A5BFCD00B318DB /* AppDelegate.swift in Sources */,
 				AC078CB124A733C900949E1C /* Category+CoreDataClass.swift in Sources */,
+				AC078CBC24A7778A00949E1C /* TaskDetailsViewController.swift in Sources */,
 				AC078CB624A7343400949E1C /* Task+CoreDataProperties.swift in Sources */,
 				AC63F32724A5BFCD00B318DB /* SceneDelegate.swift in Sources */,
 				AC078CBA24A7391700949E1C /* TaskListViewController.swift in Sources */,
