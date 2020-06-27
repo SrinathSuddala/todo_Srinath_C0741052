@@ -67,7 +67,7 @@ extension TaskListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let editAction = UIContextualAction(style: .normal, title: "Edit") { (action, view, handler) in
-            
+            self.performEditAction(at: indexPath)
         }
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, view, handler) in
             self.deleteTask(at: indexPath)
@@ -76,6 +76,14 @@ extension TaskListViewController: UITableViewDelegate {
         let configuration = UISwipeActionsConfiguration(actions: [deleteAction, editAction])
         configuration.performsFirstActionWithFullSwipe = false
         return configuration
+    }
+    
+    func performEditAction(at indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "TaskDetailsViewController") as! TaskDetailsViewController
+        viewController.selectedCategory = selectedCategory
+        viewController.selectedTask = tasks[indexPath.row]
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     func deleteTask(at indexPath: IndexPath) {
