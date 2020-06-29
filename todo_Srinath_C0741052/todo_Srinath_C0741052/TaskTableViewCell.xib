@@ -29,19 +29,28 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Toa-3M-8FY">
-                        <rect key="frame" x="20" y="67" width="304" height="14.5"/>
+                        <rect key="frame" x="20" y="67" width="204" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5aA-lN-Uey">
+                        <rect key="frame" x="234" y="66.5" width="90" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Toa-3M-8FY" firstAttribute="trailing" secondItem="pf6-aF-lV5" secondAttribute="trailing" id="C7C-i5-4Hs"/>
+                    <constraint firstItem="5aA-lN-Uey" firstAttribute="centerY" secondItem="Toa-3M-8FY" secondAttribute="centerY" id="BGa-ka-Fah"/>
+                    <constraint firstItem="Toa-3M-8FY" firstAttribute="trailing" secondItem="pf6-aF-lV5" secondAttribute="trailing" constant="-100" id="C7C-i5-4Hs"/>
                     <constraint firstItem="pf6-aF-lV5" firstAttribute="top" secondItem="ZW9-C6-Mlg" secondAttribute="bottom" constant="10" id="Cv4-Gj-pgV"/>
                     <constraint firstItem="pf6-aF-lV5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="FM8-X5-sT7"/>
                     <constraint firstItem="Toa-3M-8FY" firstAttribute="top" secondItem="pf6-aF-lV5" secondAttribute="bottom" constant="10" id="buR-Du-1FX"/>
                     <constraint firstItem="ZW9-C6-Mlg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="cJF-9b-w8Z"/>
+                    <constraint firstItem="5aA-lN-Uey" firstAttribute="leading" secondItem="Toa-3M-8FY" secondAttribute="trailing" constant="10" id="f0S-n6-tgD"/>
                     <constraint firstItem="Toa-3M-8FY" firstAttribute="leading" secondItem="pf6-aF-lV5" secondAttribute="leading" id="mCF-OK-1Q9"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="5aA-lN-Uey" secondAttribute="trailing" id="nvn-Jj-Bep"/>
                     <constraint firstItem="ZW9-C6-Mlg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="pl0-WS-2Ij"/>
                     <constraint firstAttribute="trailing" secondItem="pf6-aF-lV5" secondAttribute="trailing" constant="20" id="uNc-81-itX"/>
                     <constraint firstAttribute="bottom" secondItem="Toa-3M-8FY" secondAttribute="bottom" constant="10.5" id="w4V-ao-2zt"/>
@@ -52,9 +61,10 @@
             <connections>
                 <outlet property="dateLabel" destination="Toa-3M-8FY" id="EJe-rw-vFg"/>
                 <outlet property="descLabel" destination="pf6-aF-lV5" id="hp1-XF-usS"/>
+                <outlet property="taskDueLabel" destination="5aA-lN-Uey" id="iFH-BV-rEz"/>
                 <outlet property="titleLabel" destination="ZW9-C6-Mlg" id="nwk-CC-jAN"/>
             </connections>
-            <point key="canvasLocation" x="114.49275362318842" y="121.54017857142857"/>
+            <point key="canvasLocation" x="114.49275362318842" y="121.20535714285714"/>
         </tableViewCell>
     </objects>
 </document>

@@ -126,6 +126,18 @@ extension TaskListViewController: UITableViewDelegate {
         }
     }
     
+    func daysLeft(for task: Task) -> Int {
+        guard let currentDate = task.dateCreated else { return 0 }
+        if isArchivedCategory {
+            return 0
+        }
+        var dateComponent = DateComponents()
+        dateComponent.day = Int(task.numberOfDays)
+        let futureDate = Calendar.current.date(byAdding: dateComponent, to: currentDate)!
+        let diffInDays = Calendar.current.dateComponents([.day], from: Date(), to: futureDate).day
+        return diffInDays!
+    }
+    
     func color(for task: Task) -> UIColor {
         guard let currentDate = task.dateCreated else { return .clear }
         if isArchivedCategory {
@@ -156,6 +168,7 @@ extension TaskListViewController: UITableViewDataSource {
         cell.titleLabel.text = tasks[indexPath.row].title
         cell.descLabel.text = tasks[indexPath.row].desc
         cell.dateLabel.text = formatDateString(from: tasks[indexPath.row].dateCreated!)
+        cell.taskDueLabel.text = daysLeft(for: tasks[indexPath.row]) == 1 ? "Only 1 Day left" : ""
         cell.backgroundColor = color(for: tasks[indexPath.row])
         return cell
     }
