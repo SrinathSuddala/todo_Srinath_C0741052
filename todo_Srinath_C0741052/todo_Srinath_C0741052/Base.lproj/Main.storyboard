@@ -198,8 +198,9 @@
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
-                        <outlet property="selectCategoryButton" destination="YAr-UI-wWN" id="IfA-WR-uKM"/>
+                        <outlet property="selectCategoryButton" destination="YAr-UI-wWN" id="2OW-Yy-1gj"/>
                         <outlet property="taskDescriptionTextView" destination="vde-jh-vah" id="IkY-ww-aRO"/>
+                        <outlet property="taskNuberOfDaysTextField" destination="6l0-EP-2z8" id="Izw-3o-C8D"/>
                         <outlet property="taskTitleTextField" destination="UnN-t3-ei7" id="QB8-AT-tyc"/>
                     </connections>
                 </viewController>

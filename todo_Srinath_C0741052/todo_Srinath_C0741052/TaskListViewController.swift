@@ -106,6 +106,22 @@ extension TaskListViewController: UITableViewDelegate {
         appdelegate.persistentContainer.viewContext.delete(task)
         taskListTableView.endUpdates()
     }
+    
+    func color(for task: Task) -> UIColor {
+        guard let currentDate = task.dateCreated else { return .clear }
+        var dateComponent = DateComponents()
+        dateComponent.day = Int(task.numberOfDays)
+        let futureDate = Calendar.current.date(byAdding: dateComponent, to: currentDate)!
+        let diffInDays = Calendar.current.dateComponents([.day], from: Date(), to: futureDate).day
+        switch diffInDays! {
+        case Int.min ... -1:
+            return .red
+        case 0 ... Int.max :
+            return .green
+        default:
+            return .clear
+        }
+    }
 }
 
 extension TaskListViewController: UITableViewDataSource {
@@ -116,6 +132,7 @@ extension TaskListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
         cell.textLabel?.text = tasks[indexPath.row].title
+        cell.backgroundColor = color(for: tasks[indexPath.row])
         return cell
     }
 }

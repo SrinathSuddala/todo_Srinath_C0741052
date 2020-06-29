@@ -32,12 +32,13 @@ class TaskDetailsViewController: UIViewController {
     
     func showSelectedTaskDetails() {
         guard let task = selectedTask else {
-            selectCategoryButton.isHidden = false
+            selectCategoryButton.isHidden = true
             return
         }
         selectCategoryButton.isHidden = false
         taskTitleTextField.text = task.title
         taskDescriptionTextView.text = task.desc
+        taskNuberOfDaysTextField.text = "\(task.numberOfDays)"
         if let category = task.category {
             selectCategoryButton.setTitle(category.title, for: UIControl.State())
         } else {
@@ -52,6 +53,9 @@ class TaskDetailsViewController: UIViewController {
         task.desc = desc
         task.category = selectedCategory
         task.numberOfDays = Int64(numberofDays) ?? 0
+        if task.dateCreated == nil {
+            task.dateCreated = Date()
+        }
         if selectedTask == nil {
             appdelegate.persistentContainer.viewContext.insert(task)
         }
