@@ -69,13 +69,25 @@ extension TaskListViewController: UITableViewDelegate {
         let editAction = UIContextualAction(style: .normal, title: "Edit") { (action, view, handler) in
             self.performEditAction(at: indexPath)
         }
+        let addAction = UIContextualAction(style: .normal, title: "Add") { (action, view, handler) in
+            self.performAddAction(at: indexPath)
+        }
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, view, handler) in
             self.deleteTask(at: indexPath)
         }
         deleteAction.backgroundColor = .red
-        let configuration = UISwipeActionsConfiguration(actions: [deleteAction, editAction])
+        let configuration = UISwipeActionsConfiguration(actions: [deleteAction, editAction, addAction])
         configuration.performsFirstActionWithFullSwipe = false
         return configuration
+    }
+    
+    func performAddAction(at indexPath: IndexPath) {
+        taskListTableView.beginUpdates()
+        let task = tasks[indexPath.row]
+        task.numberOfDays += 1
+        taskListTableView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+        try? appdelegate.persistentContainer.viewContext.save()
+        taskListTableView.endUpdates()
     }
     
     func performEditAction(at indexPath: IndexPath) {

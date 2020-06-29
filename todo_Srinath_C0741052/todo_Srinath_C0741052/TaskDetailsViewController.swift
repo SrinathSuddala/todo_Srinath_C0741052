@@ -51,7 +51,7 @@ class TaskDetailsViewController: UIViewController {
         task.title = title
         task.desc = desc
         task.category = selectedCategory
-        task.numberOfDays = Int64(numberofDays)!
+        task.numberOfDays = Int64(numberofDays) ?? 0
         if selectedTask == nil {
             appdelegate.persistentContainer.viewContext.insert(task)
         }
