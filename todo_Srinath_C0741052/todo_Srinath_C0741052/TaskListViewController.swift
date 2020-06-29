@@ -16,7 +16,7 @@ class TaskListViewController: UIViewController {
         super.viewDidLoad()
         title = "Tasks"
         isArchivedCategory = selectedCategory.title == "Archived"
-        taskListTableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        taskListTableView.register(UINib(nibName: "TaskTableViewCell", bundle: nil), forCellReuseIdentifier: "TaskTableViewCell")
         if !isArchivedCategory {
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
         }
@@ -152,8 +152,10 @@ extension TaskListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
-        cell.textLabel?.text = tasks[indexPath.row].title
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TaskTableViewCell") as! TaskTableViewCell
+        cell.titleLabel.text = tasks[indexPath.row].title
+        cell.descLabel.text = tasks[indexPath.row].desc
+        cell.dateLabel.text = "\(tasks[indexPath.row].dateCreated!)"
         cell.backgroundColor = color(for: tasks[indexPath.row])
         return cell
     }
