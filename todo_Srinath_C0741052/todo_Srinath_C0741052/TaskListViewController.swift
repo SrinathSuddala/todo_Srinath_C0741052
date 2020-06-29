@@ -17,7 +17,7 @@ class TaskListViewController: UIViewController {
         title = "Tasks"
         isArchivedCategory = selectedCategory.title == "Archived"
         taskListTableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-        if isArchivedCategory {
+        if !isArchivedCategory {
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
         }
         // Do a ny additional setup after loading the view.

@@ -27,7 +27,14 @@ class TaskDetailsViewController: UIViewController {
         selectCategoryButton.layer.cornerRadius = 5.0
         
         showSelectedTaskDetails()
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     func showSelectedTaskDetails() {
