@@ -26,7 +26,7 @@
         <!--Categories View Controller-->
         <scene sceneID="tVP-5N-awn">
             <objects>
-                <viewController id="0ys-L9-uLi" customClass="CategoriesViewController" customModule="todo_Srinath_C0741052" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CategoriesViewController" id="0ys-L9-uLi" customClass="CategoriesViewController" customModule="todo_Srinath_C0741052" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0kj-Qk-09d">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -169,6 +169,9 @@
                                     <constraint firstAttribute="height" constant="40" id="V0F-Or-ciQ"/>
                                 </constraints>
                                 <state key="normal" title="Select Category"/>
+                                <connections>
+                                    <action selector="categoryButtonTapped:" destination="5Y7-hf-DAe" eventType="touchUpInside" id="iEq-aL-z0e"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter number of days" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6l0-EP-2z8">
                                 <rect key="frame" x="20" y="315" width="374" height="44"/>

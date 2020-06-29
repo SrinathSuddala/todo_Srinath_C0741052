@@ -37,6 +37,18 @@ class TaskDetailsViewController: UIViewController {
         view.endEditing(true)
     }
     
+    @IBAction func categoryButtonTapped(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "CategoriesViewController") as! CategoriesViewController
+        viewController.isFromNotesDetails = true
+        viewController.selectedCategoryUuid = selectedTask?.category?.uuid
+        viewController.onCategorySelected = { category in
+            self.selectedCategory = category
+            self.selectCategoryButton.setTitle(category.title, for: UIControl.State())
+        }
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
     func showSelectedTaskDetails() {
         guard let task = selectedTask else {
             selectCategoryButton.isHidden = true
