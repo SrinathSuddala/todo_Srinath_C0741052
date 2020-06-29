@@ -155,9 +155,15 @@ extension TaskListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TaskTableViewCell") as! TaskTableViewCell
         cell.titleLabel.text = tasks[indexPath.row].title
         cell.descLabel.text = tasks[indexPath.row].desc
-        cell.dateLabel.text = "\(tasks[indexPath.row].dateCreated!)"
+        cell.dateLabel.text = formatDateString(from: tasks[indexPath.row].dateCreated!)
         cell.backgroundColor = color(for: tasks[indexPath.row])
         return cell
+    }
+    
+    private func formatDateString(from date: Date) -> String {
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MMM-dd hh:mm:ss"
+        return df.string(from: Date())
     }
 }
 
