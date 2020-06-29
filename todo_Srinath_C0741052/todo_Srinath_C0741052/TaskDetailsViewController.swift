@@ -5,11 +5,13 @@ import UIKit
 class TaskDetailsViewController: UIViewController {
 
     @IBOutlet weak var taskTitleTextField: UITextField!
+    @IBOutlet weak var taskNuberOfDaysTextField: UITextField!
     @IBOutlet weak var selectCategoryButton: UIButton!
     @IBOutlet weak var taskDescriptionTextView: UITextView!
     var selectedCategory: Category?
     var selectedTask: Task?
     let appdelegate = UIApplication.shared.delegate as! AppDelegate
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +31,11 @@ class TaskDetailsViewController: UIViewController {
     }
     
     func showSelectedTaskDetails() {
-        guard let task = selectedTask else { return }
+        guard let task = selectedTask else {
+            selectCategoryButton.isHidden = false
+            return
+        }
+        selectCategoryButton.isHidden = false
         taskTitleTextField.text = task.title
         taskDescriptionTextView.text = task.desc
         if let category = task.category {
@@ -40,11 +46,12 @@ class TaskDetailsViewController: UIViewController {
     }
     
     @objc func saveTapped() {
-        guard let title = taskTitleTextField.text, let desc = taskDescriptionTextView.text else { return }
+        guard let title = taskTitleTextField.text, let desc = taskDescriptionTextView.text, let numberofDays = taskNuberOfDaysTextField.text else { return }
         let task = selectedTask == nil ? Task(context: appdelegate.persistentContainer.viewContext) : selectedTask!
         task.title = title
         task.desc = desc
         task.category = selectedCategory
+        task.numberOfDays = Int64(numberofDays)!
         if selectedTask == nil {
             appdelegate.persistentContainer.viewContext.insert(task)
         }

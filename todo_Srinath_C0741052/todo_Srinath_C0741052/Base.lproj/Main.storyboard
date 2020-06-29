@@ -170,6 +170,14 @@
                                 </constraints>
                                 <state key="normal" title="Select Category"/>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter number of days" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6l0-EP-2z8">
+                                <rect key="frame" x="20" y="315" width="374" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="cgG-VI-STI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -177,10 +185,13 @@
                             <constraint firstItem="RWt-s0-5qo" firstAttribute="trailing" secondItem="UnN-t3-ei7" secondAttribute="trailing" constant="20" id="AUD-YW-RXH"/>
                             <constraint firstItem="vde-jh-vah" firstAttribute="leading" secondItem="RWt-s0-5qo" secondAttribute="leading" constant="20" id="CsD-xa-wzA"/>
                             <constraint firstItem="RWt-s0-5qo" firstAttribute="trailing" secondItem="YAr-UI-wWN" secondAttribute="trailing" constant="20" id="NyZ-pZ-mdS"/>
+                            <constraint firstItem="6l0-EP-2z8" firstAttribute="top" secondItem="vde-jh-vah" secondAttribute="bottom" constant="20" id="ZRT-D9-L8p"/>
                             <constraint firstItem="YAr-UI-wWN" firstAttribute="leading" secondItem="RWt-s0-5qo" secondAttribute="leading" constant="20" id="cdk-cZ-2Bs"/>
                             <constraint firstItem="RWt-s0-5qo" firstAttribute="trailing" secondItem="vde-jh-vah" secondAttribute="trailing" constant="20" id="fFM-rV-L1z"/>
                             <constraint firstItem="UnN-t3-ei7" firstAttribute="leading" secondItem="RWt-s0-5qo" secondAttribute="leading" constant="20" id="jV6-xl-TlB"/>
+                            <constraint firstItem="6l0-EP-2z8" firstAttribute="leading" secondItem="RWt-s0-5qo" secondAttribute="leading" constant="20" id="mEB-Xa-aiA"/>
                             <constraint firstItem="YAr-UI-wWN" firstAttribute="top" secondItem="RWt-s0-5qo" secondAttribute="top" constant="20" id="pkY-sA-d4I"/>
+                            <constraint firstItem="RWt-s0-5qo" firstAttribute="trailing" secondItem="6l0-EP-2z8" secondAttribute="trailing" constant="20" id="tbr-9M-d2O"/>
                             <constraint firstItem="UnN-t3-ei7" firstAttribute="top" secondItem="YAr-UI-wWN" secondAttribute="bottom" constant="20" id="tjK-L2-LIY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RWt-s0-5qo"/>
